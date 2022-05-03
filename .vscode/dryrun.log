@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/greatng/42Bangkok/42cursus/pipex'
+make -C ./libft all
+make -C ./gnl all
+mkdir -p obj
+echo "\033[38;5;2mCompiling:\033[38;5;255m"
+gcc -Wall -Wextra -Werror -c src/pipex_main.c -o obj/pipex_main.o 			
+mkdir -p obj
+echo "\033[38;5;2mCompiling:\033[38;5;255m"
+gcc -Wall -Wextra -Werror -c src/pipex_router.c -o obj/pipex_router.o 			
+mkdir -p obj
+echo "\033[38;5;2mCompiling:\033[38;5;255m"
+gcc -Wall -Wextra -Werror -c src/pipex_err.c -o obj/pipex_err.o 			
+echo "\033[38;5;2mCompiling:\033[38;5;255m"
+gcc -Wall -Wextra -Werror ./libft/libft.a ./gnl/gnl.a obj/pipex_main.o obj/pipex_router.o obj/pipex_err.o -o pipex
+make: Leaving directory `/Users/greatng/42Bangkok/42cursus/pipex'
+ 
